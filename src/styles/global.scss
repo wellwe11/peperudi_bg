@@ -99,3 +99,8 @@ h6 {
   min-height: 100vh;
   isolation: isolate; // prevents z-index issues bleeding out of the app
 }
+
+.sans_text {
+  font-family: $sans;
+  text-transform: uppercase;
+}

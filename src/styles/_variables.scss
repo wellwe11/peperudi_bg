@@ -2,7 +2,20 @@
 // Colors
 // ---------------------------------
 
+$masthead:
+  "Bodoni Moda", "Cormorant Garamond", Georgia, serif; // Elegant hero-section text-style
+$sans:
+  "Jost",
+  -apple-system,
+  Helvetica,
+  Arial,
+  sans-serif; // Straight, capsulated text
+
 $paper: #f1efea; // Default background color
+$line: #dad6ce;
+$wash: #6f6c66;
+
+$rule: 1px solid $line; // Global border
 
 $color-primary: #2d6a4f; // adjust to your brand color
 $color-primary-dark: #1b4332;
