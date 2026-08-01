@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useRevealOnScroll } from "../../hooks/useRevealOnScroll";
-import "../../styles/productCard.scss";
+import { useRevealOnScroll } from "@/hooks/useRevealOnScroll";
+import "@/styles/productCard.scss";
 
 export const Route = createFileRoute("/gallery")({
   component: RouteComponent,

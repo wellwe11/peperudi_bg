@@ -1,0 +1,27 @@
+.hero {
+  &.container {
+    border: 10px solid black;
+    height: 100vh;
+    width: 100vw;
+
+    padding: 7.5rem 6.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+
+    .text_wrapper {
+      background-color: green;
+      flex: 1;
+      display: flex;
+      justify-content: start;
+    }
+
+    .image_wrapper {
+      background-color: orange;
+      flex: 1;
+      display: flex;
+      justify-content: end;
+    }
+  }
+}

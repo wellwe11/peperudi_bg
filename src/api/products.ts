@@ -1,7 +1,6 @@
 // getProducts(), getProductById()
-// src/api/products.ts
-import productsData from "../resources/data/products.json";
-import type { Product } from "../types/product";
+import productsData from "@/resources/data/products.json";
+import type { Product } from "@/types/product";
 
 export async function getProducts(): Promise<Product[]> {
   // later: return client.get('/products')
