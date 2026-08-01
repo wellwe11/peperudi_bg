@@ -1,0 +1,9 @@
+[
+  {
+    "id": "shirt-01",
+    "name": "Classic Tee",
+    "price": 25,
+    "image": "/src/resources/images/products/shirt-01.jpg",
+    "description": "..."
+  }
+]
