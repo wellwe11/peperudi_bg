@@ -9,24 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as CartRouteImport } from './routes/cart'
-import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as IndexRouteRouteImport } from './routes/index/route'
+import { Route as CartRouteRouteImport } from './routes/cart/route'
+import { Route as GalleryRouteRouteImport } from './routes/gallery/route'
 import { Route as ProductsRouteRouteImport } from './routes/products/route'
 import { Route as ProductsIndexRouteImport } from './routes/products/index'
 import { Route as ProductsProductIdRouteImport } from './routes/products/$productId'
 
-const IndexRoute = IndexRouteImport.update({
+const IndexRouteRoute = IndexRouteRouteImport.update({
   id: '/',
-  path: '/',
+  path: '',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CartRoute = CartRouteImport.update({
+const CartRouteRoute = CartRouteRouteImport.update({
   id: '/cart',
   path: '/cart',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GalleryRoute = GalleryRouteImport.update({
+const GalleryRouteRoute = GalleryRouteRouteImport.update({
   id: '/gallery',
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
@@ -48,26 +48,26 @@ const ProductsProductIdRoute = ProductsProductIdRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof IndexRouteRoute
+  '/cart': typeof CartRouteRoute
+  '/gallery': typeof GalleryRouteRoute
   '/products': typeof ProductsRouteRouteWithChildren
-  '/cart': typeof CartRoute
-  '/gallery': typeof GalleryRoute
   '/products/$productId': typeof ProductsProductIdRoute
   '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/cart': typeof CartRoute
-  '/gallery': typeof GalleryRoute
+  '/': typeof IndexRouteRoute
+  '/cart': typeof CartRouteRoute
+  '/gallery': typeof GalleryRouteRoute
   '/products/$productId': typeof ProductsProductIdRoute
   '/products': typeof ProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/': typeof IndexRouteRoute
+  '/cart': typeof CartRouteRoute
+  '/gallery': typeof GalleryRouteRoute
   '/products': typeof ProductsRouteRouteWithChildren
-  '/cart': typeof CartRoute
-  '/gallery': typeof GalleryRoute
   '/products/$productId': typeof ProductsProductIdRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -75,9 +75,9 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/products'
     | '/cart'
     | '/gallery'
+    | '/products'
     | '/products/$productId'
     | '/products/'
   fileRoutesByTo: FileRoutesByTo
@@ -85,41 +85,41 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/products'
     | '/cart'
     | '/gallery'
+    | '/products'
     | '/products/$productId'
     | '/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  IndexRouteRoute: typeof IndexRouteRoute
+  CartRouteRoute: typeof CartRouteRoute
+  GalleryRouteRoute: typeof GalleryRouteRoute
   ProductsRouteRoute: typeof ProductsRouteRouteWithChildren
-  CartRoute: typeof CartRoute
-  GalleryRoute: typeof GalleryRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
       id: '/'
-      path: '/'
+      path: ''
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+      preLoaderRoute: typeof IndexRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cart': {
       id: '/cart'
       path: '/cart'
       fullPath: '/cart'
-      preLoaderRoute: typeof CartRouteImport
+      preLoaderRoute: typeof CartRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
       fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
+      preLoaderRoute: typeof GalleryRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/products': {
@@ -161,10 +161,10 @@ const ProductsRouteRouteWithChildren = ProductsRouteRoute._addFileChildren(
 )
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  IndexRouteRoute: IndexRouteRoute,
+  CartRouteRoute: CartRouteRoute,
+  GalleryRouteRoute: GalleryRouteRoute,
   ProductsRouteRoute: ProductsRouteRouteWithChildren,
-  CartRoute: CartRoute,
-  GalleryRoute: GalleryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

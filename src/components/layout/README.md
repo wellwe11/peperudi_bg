@@ -1,1 +1,1 @@
-## generic/dumb components (Button, Card, Modal)
+## structural (Nav, Footer)

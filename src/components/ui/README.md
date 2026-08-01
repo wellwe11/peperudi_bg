@@ -1,1 +1,1 @@
-## tructural components (Nav, Footer, PageWrapper)
+## generic, reusable anywhere (Button, ProductCard)
