@@ -14,14 +14,15 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+
+  scrollbar-gutter: stable;
 }
 
 body {
   min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  color: $color-text;
-  background: $color-bg;
+
   font-family:
     system-ui,
     -apple-system,
@@ -32,6 +33,12 @@ body {
     sans-serif;
 
   background-color: $paper;
+}
+
+.container {
+  max-width: $breakpoint-max;
+  margin-inline: auto;
+  padding-inline: $gutter;
 }
 
 // ---------------------------------

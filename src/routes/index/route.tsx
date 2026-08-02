@@ -11,6 +11,12 @@ function RouteComponent() {
   return (
     <div>
       <Hero />
+      <div
+        style={{
+          height: "500px",
+          backgroundColor: "green",
+        }}
+      />
     </div>
   );
 }

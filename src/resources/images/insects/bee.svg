@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380">
+  <defs>
+    <g id="bee-wing-r">
+      <ellipse cx="55" cy="150" rx="60" ry="26" transform="rotate(-18 55 150)" opacity="0.92"/>
+      <ellipse cx="70" cy="185" rx="42" ry="18" transform="rotate(-10 70 185)" opacity="0.92"/>
+      <path d="M10 150 C 40 145, 80 148, 110 158 M25 175 C 50 172, 80 178, 105 188"
+        stroke="#54524d" stroke-width="1.5" fill="none" opacity="0.5"/>
+    </g>
+    <g id="bee-legs-r">
+      <path d="M128 175 L 90 195 M132 195 L 85 220 M138 220 L 100 255"
+        stroke="#6f6c66" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <g fill="#6f6c66">
+    <use href="#bee-wing-r"/>
+    <use href="#bee-wing-r" transform="translate(300,0) scale(-1,1)"/>
+    <!-- head -->
+    <circle cx="150" cy="75" r="26"/>
+    <!-- eyes -->
+    <circle cx="136" cy="72" r="7" fill="#54524d" opacity="0.6"/>
+    <circle cx="164" cy="72" r="7" fill="#54524d" opacity="0.6"/>
+    <!-- thorax -->
+    <ellipse cx="150" cy="130" rx="32" ry="30"/>
+    <!-- abdomen with banding -->
+    <path d="M150 155
+      C 195 155, 212 195, 202 230
+      C 192 265, 168 282, 150 282
+      C 132 282, 108 265, 98 230
+      C 88 195, 105 155, 150 155
+      Z"/>
+    <path d="M108 195 C 130 202, 170 202, 192 195 M100 220 C 128 230, 172 230, 200 220 M110 250 C 130 258, 170 258, 190 250"
+      stroke="#54524d" stroke-width="3.5" fill="none" opacity="0.55"/>
+    <!-- antennae -->
+    <path d="M138 55 C 128 40, 118 30, 112 22" stroke="#6f6c66" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M162 55 C 172 40, 182 30, 188 22" stroke="#6f6c66" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <use href="#bee-legs-r"/>
+    <use href="#bee-legs-r" transform="translate(300,0) scale(-1,1)"/>
+  </g>
+</svg>

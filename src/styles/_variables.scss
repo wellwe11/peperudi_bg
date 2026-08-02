@@ -2,37 +2,10 @@
 // Colors
 // ---------------------------------
 
-$masthead:
-  "Bodoni Moda", "Cormorant Garamond", Georgia, serif; // Elegant hero-section text-style
-$sans:
-  "Jost",
-  -apple-system,
-  Helvetica,
-  Arial,
-  sans-serif; // Straight, capsulated text
-
 $paper: #f1efea; // Default background color
 $line: #dad6ce;
 $wash: #6f6c66;
-
-$rule: 1px solid $line; // Global border
-
-$color-primary: #2d6a4f; // adjust to your brand color
-$color-primary-dark: #1b4332;
-$color-primary-light: #52b788;
-
-$color-accent: #d4a373;
-
-$color-text: #1a1a1a;
-$color-text-muted: #6b6b6b;
-
-$color-bg: #ffffff;
-$color-bg-alt: #f5f5f5;
-
-$color-border: #e0e0e0;
-
-$color-error: #d64550;
-$color-success: #2d6a4f;
+$thin: #9b9894;
 
 // ---------------------------------
 // Spacing scale (use consistently instead of arbitrary px values)
@@ -48,6 +21,7 @@ $space-3xl: 4rem; // 64px
 // ---------------------------------
 // Typography
 // ---------------------------------
+$font-size-sx: 0.75rem; // 8px
 $font-size-sm: 0.875rem; // 14px
 $font-size-base: 1rem; // 16px
 $font-size-md: 1.125rem; // 18px
@@ -59,6 +33,15 @@ $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
+$masthead:
+  "Bodoni Moda", "Cormorant Garamond", Georgia, serif; // Elegant hero-section text-style
+$sans:
+  "Jost",
+  -apple-system,
+  Helvetica,
+  Arial,
+  sans-serif; // Straight, capsulated text
+
 // ---------------------------------
 // Breakpoints (for use inside mixins — see _mixins.scss)
 // ---------------------------------
@@ -66,6 +49,9 @@ $breakpoint-sm: 480px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-xl: 1280px;
+$breakpoint-max: 1920px;
+
+$gutter: clamp(20px, 5vw, 72px);
 
 // ---------------------------------
 // Misc
@@ -76,3 +62,7 @@ $border-radius-lg: 16px;
 
 $transition-fast: 0.15s ease;
 $transition-base: 0.25s ease;
+
+$ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+$rule: 1px solid $line; // Global border

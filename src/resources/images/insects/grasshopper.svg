@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
+  <defs>
+    <g id="gh-hindleg-r">
+      <!-- femur (thick, folded alongside body) -->
+      <path d="M175 175
+        C 210 185, 235 215, 240 260
+        C 242 280, 230 288, 218 278
+        C 205 245, 190 210, 165 190
+        Z"/>
+      <!-- tibia (thin, angled out) -->
+      <path d="M228 270 L 258 335" stroke="#6f6c66" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M258 335 L 250 350 M258 335 L 262 352" stroke="#6f6c66" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="gh-frontleg-r">
+      <path d="M155 130 L 130 165 M162 145 L 142 185" stroke="#6f6c66" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <g fill="#6f6c66">
+    <!-- head -->
+    <path d="M150 45 C 132 45, 120 65, 122 88 C 124 105, 136 115, 150 115 C 164 115, 176 105, 178 88 C 180 65, 168 45, 150 45 Z"/>
+    <!-- eyes -->
+    <circle cx="137" cy="72" r="6" fill="#54524d" opacity="0.55"/>
+    <circle cx="163" cy="72" r="6" fill="#54524d" opacity="0.55"/>
+    <!-- antennae -->
+    <path d="M140 50 C 128 35, 116 24, 108 15" stroke="#6f6c66" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M160 50 C 172 35, 184 24, 192 15" stroke="#6f6c66" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- thorax -->
+    <path d="M124 110 C 120 130, 122 150, 130 165 L 170 165 C 178 150, 180 130, 176 110 Z"/>
+    <!-- folded wings on back -->
+    <path d="M150 160 L 145 300 M150 160 L 155 300" stroke="#54524d" stroke-width="2.5" fill="none" opacity="0.45"/>
+    <!-- abdomen -->
+    <path d="M132 165
+      C 122 210, 122 260, 135 300
+      C 142 320, 150 330, 150 330
+      C 150 330, 158 320, 165 300
+      C 178 260, 178 210, 168 165
+      Z"/>
+    <path d="M136 195 C 145 198, 155 198, 164 195 M133 225 C 144 229, 156 229, 167 225 M133 255 C 144 259, 156 259, 167 255"
+      stroke="#54524d" stroke-width="2" fill="none" opacity="0.4"/>
+    <use href="#gh-frontleg-r"/>
+    <use href="#gh-frontleg-r" transform="translate(300,0) scale(-1,1)"/>
+    <use href="#gh-hindleg-r"/>
+    <use href="#gh-hindleg-r" transform="translate(300,0) scale(-1,1)"/>
+  </g>
+</svg>

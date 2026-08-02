@@ -1,0 +1,60 @@
+@use "@/styles/variables" as *;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  width: 100%;
+
+  padding: 22px 0px;
+  border-bottom: 1px solid transparent;
+
+  transition:
+    border-color 0.4s,
+    padding 0.4s $ease;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: color-mix(in srgb, $paper 86%, transparent);
+
+  &--scrolled {
+    border-bottom-color: $line;
+    padding: 14px 0px;
+  }
+
+  .nav_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav_logo {
+      font-family: $masthead;
+      text-transform: uppercase;
+      font-size: $font-size-sm;
+      letter-spacing: 0.23rem;
+    }
+
+    .nav_links {
+      display: flex;
+      gap: clamp(1rem, 20px, 2rem);
+
+      .nav_link {
+        font-size: $font-size-sx;
+        color: $thin;
+        transition: color 0.4s $ease;
+
+        &:hover {
+          color: $wash;
+        }
+      }
+    }
+  }
+
+  li {
+    Link {
+    }
+  }
+}

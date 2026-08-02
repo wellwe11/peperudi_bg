@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <defs>
+    <g id="cr-hindleg-r">
+      <path d="M172 175
+        C 205 188, 228 218, 234 258
+        C 236 276, 224 284, 213 274
+        C 200 242, 186 208, 163 190
+        Z"/>
+      <path d="M222 268 L 250 328" stroke="#6f6c66" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="cr-legs-r">
+      <path d="M150 130 L 122 160 M158 148 L 132 182" stroke="#6f6c66" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="cr-antenna-r">
+      <path d="M140 55 C 110 40, 70 30, 30 30" stroke="#6f6c66" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <g fill="#6f6c66">
+    <!-- head -->
+    <circle cx="150" cy="70" r="26"/>
+    <circle cx="138" cy="68" r="6" fill="#54524d" opacity="0.5"/>
+    <circle cx="162" cy="68" r="6" fill="#54524d" opacity="0.5"/>
+    <use href="#cr-antenna-r"/>
+    <use href="#cr-antenna-r" transform="translate(300,0) scale(-1,1)"/>
+    <!-- thorax -->
+    <path d="M122 100 C 118 118, 120 135, 130 150 L 170 150 C 180 135, 182 118, 178 100 Z"/>
+    <!-- folded wings lines -->
+    <path d="M150 148 L 144 280 M150 148 L 156 280" stroke="#54524d" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <!-- abdomen -->
+    <path d="M130 150
+      C 118 195, 118 245, 132 285
+      C 140 305, 150 315, 150 315
+      C 150 315, 160 305, 168 285
+      C 182 245, 182 195, 170 150
+      Z"/>
+    <use href="#cr-legs-r"/>
+    <use href="#cr-legs-r" transform="translate(300,0) scale(-1,1)"/>
+    <use href="#cr-hindleg-r"/>
+    <use href="#cr-hindleg-r" transform="translate(300,0) scale(-1,1)"/>
+  </g>
+</svg>

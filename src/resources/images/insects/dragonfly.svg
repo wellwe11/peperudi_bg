@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
+  <defs>
+    <g id="dfly-wings-r">
+      <path d="M150 150 C 100 120, 30 110, 8 130 C -8 145, 5 168, 40 172 C 85 178, 125 168, 150 155 Z" opacity="0.9"/>
+      <path d="M150 175 C 105 158, 40 155, 15 175 C 0 188, 12 208, 45 208 C 90 208, 128 195, 150 180 Z" opacity="0.9"/>
+      <path d="M20 135 C 55 138, 95 145, 140 158 M20 178 C 55 178, 95 182, 140 183"
+        stroke="#54524d" stroke-width="1.5" fill="none" opacity="0.5"/>
+    </g>
+  </defs>
+  <g fill="#6f6c66">
+    <use href="#dfly-wings-r"/>
+    <use href="#dfly-wings-r" transform="translate(300,0) scale(-1,1)"/>
+    <!-- eyes -->
+    <circle cx="132" cy="72" r="20"/>
+    <circle cx="168" cy="72" r="20"/>
+    <!-- head bridge -->
+    <ellipse cx="150" cy="80" rx="20" ry="10"/>
+    <!-- thorax -->
+    <ellipse cx="150" cy="130" rx="19" ry="34"/>
+    <!-- long segmented abdomen -->
+    <path d="M150 160
+      L 158 380
+      C 158 392, 142 392, 142 380
+      L 150 160 Z"/>
+    <path d="M143 200 L 157 200 M142 240 L 158 240 M141 280 L 159 280 M140 320 L 160 320 M139 355 L 161 355"
+      stroke="#54524d" stroke-width="2" opacity="0.45"/>
+    <!-- tail fin -->
+    <path d="M142 375 L 128 398 L 150 388 L 172 398 L 158 375 Z"/>
+  </g>
+</svg>

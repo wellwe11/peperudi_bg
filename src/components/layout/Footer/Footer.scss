@@ -1,0 +1,78 @@
+@use "@/styles/_variables.scss" as *;
+
+.scroller {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100svh;
+
+  .contact-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contact-sticky {
+      height: 100%;
+      position: relative;
+
+      .contact-icon {
+        position: sticky;
+        top: 500px;
+        width: 3.5rem;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .contact-info {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.55rem;
+    overflow: hidden;
+
+    .contact-info-row {
+      display: flex;
+      justify-content: center;
+      gap: $font-size-sx;
+      will-change: gap;
+
+      p {
+        font-size: $font-size-sx;
+        font-weight: 400;
+        line-height: $font-size-sx;
+
+        flex: 1;
+
+        &:nth-child(1) {
+          text-align: right;
+        }
+
+        &:nth-child(2) {
+          color: gray !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380">
+  <defs>
+    <g id="moth-wing-r">
+      <path d="M150 135
+        C 105 55, 15 45, 5 95
+        C -3 138, 55 168, 105 158
+        C 78 178, 62 215, 82 245
+        C 100 272, 130 250, 150 205
+        Z"/>
+      <path d="M8 100 C 40 90, 80 92, 120 112 M20 135 C 50 130, 85 135, 112 148 M85 168 C 80 190, 82 215, 98 235"
+        stroke="#54524d" stroke-width="2" fill="none" opacity="0.5"/>
+    </g>
+  </defs>
+  <g fill="#6f6c66">
+    <use href="#moth-wing-r"/>
+    <use href="#moth-wing-r" transform="translate(300,0) scale(-1,1)"/>
+    <!-- fuzzy body -->
+    <ellipse cx="150" cy="95" rx="15" ry="20"/>
+    <ellipse cx="150" cy="135" rx="12" ry="24"/>
+    <path d="M150 155 C 140 155, 134 172, 135 200 L 137 250 C 137 262, 143 270, 150 270 C 157 270, 163 262, 163 250 L 165 200 C 166 172, 160 155, 150 155 Z"/>
+    <!-- feathery antennae -->
+    <path d="M141 78 C 122 65, 95 60, 75 65" stroke="#6f6c66" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M147 78 C 138 62, 122 50, 108 45" stroke="#6f6c66" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M159 78 C 178 65, 205 60, 225 65" stroke="#6f6c66" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M153 78 C 162 62, 178 50, 192 45" stroke="#6f6c66" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

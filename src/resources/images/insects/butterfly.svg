@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380">
+  <defs>
+    <g id="bfly-wing-r">
+      <!-- forewing -->
+      <path d="M150 120
+        C 120 60, 60 20, 25 30
+        C -5 38, -5 85, 20 110
+        C 45 135, 95 145, 150 140
+        Z"/>
+      <!-- hindwing -->
+      <path d="M150 150
+        C 130 155, 95 165, 75 195
+        C 58 220, 65 255, 95 260
+        C 120 264, 140 235, 150 195
+        Z"/>
+      <!-- vein lines -->
+      <path d="M145 118 C 110 90, 60 65, 30 55 M148 128 C 105 115, 60 100, 28 92 M120 150 C 100 165, 85 190, 82 215 M130 155 C 115 175, 105 205, 105 235"
+        stroke="#54524d" stroke-width="2" fill="none" opacity="0.5"/>
+    </g>
+  </defs>
+  <g fill="#6f6c66">
+    <use href="#bfly-wing-r"/>
+    <use href="#bfly-wing-r" transform="translate(300,0) scale(-1,1)"/>
+    <!-- body segments -->
+    <ellipse cx="150" cy="95" rx="11" ry="16"/>
+    <ellipse cx="150" cy="130" rx="9" ry="22"/>
+    <path d="M150 148 C 141 148, 136 165, 137 195 L 139 255 C 139 268, 145 276, 150 276 C 155 276, 161 268, 161 255 L 163 195 C 164 165, 159 148, 150 148 Z"/>
+    <!-- antennae -->
+    <path d="M144 82 C 132 62, 112 50, 96 46" stroke="#6f6c66" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M156 82 C 168 62, 188 50, 204 46" stroke="#6f6c66" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="96" cy="46" r="4.5"/>
+    <circle cx="204" cy="46" r="4.5"/>
+  </g>
+</svg>

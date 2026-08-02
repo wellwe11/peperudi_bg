@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380">
+  <defs>
+    <g id="ant-legs-front-r">
+      <path d="M138 130 C 115 122, 95 108, 82 90" stroke="#6f6c66" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="ant-legs-mid-r">
+      <path d="M170 175 C 200 172, 225 178, 245 195" stroke="#6f6c66" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="ant-legs-back-r">
+      <path d="M168 205 C 200 215, 222 240, 235 268" stroke="#6f6c66" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <g fill="#6f6c66">
+    <!-- head -->
+    <ellipse cx="150" cy="75" rx="28" ry="26"/>
+    <!-- mandibles -->
+    <path d="M132 95 C 122 105, 118 115, 122 122 M168 95 C 178 105, 182 115, 178 122"
+      stroke="#6f6c66" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- eyes -->
+    <circle cx="134" cy="72" r="5" fill="#54524d" opacity="0.55"/>
+    <circle cx="166" cy="72" r="5" fill="#54524d" opacity="0.55"/>
+    <!-- antennae -->
+    <path d="M138 55 C 122 45, 105 42, 90 44" stroke="#6f6c66" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M162 55 C 178 45, 195 42, 210 44" stroke="#6f6c66" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- thorax segments -->
+    <ellipse cx="150" cy="130" rx="22" ry="26"/>
+    <ellipse cx="150" cy="168" rx="18" ry="18"/>
+    <!-- waist -->
+    <circle cx="150" cy="196" r="9"/>
+    <!-- abdomen -->
+    <path d="M150 205
+      C 195 205, 214 245, 208 280
+      C 202 315, 178 335, 150 335
+      C 122 335, 98 315, 92 280
+      C 86 245, 105 205, 150 205
+      Z"/>
+    <path d="M108 250 C 130 258, 170 258, 192 250 M104 280 C 128 290, 172 290, 196 280"
+      stroke="#54524d" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <!-- legs mirrored -->
+    <use href="#ant-legs-front-r"/>
+    <use href="#ant-legs-front-r" transform="translate(300,0) scale(-1,1)"/>
+    <use href="#ant-legs-mid-r"/>
+    <use href="#ant-legs-mid-r" transform="translate(300,0) scale(-1,1)"/>
+    <use href="#ant-legs-back-r"/>
+    <use href="#ant-legs-back-r" transform="translate(300,0) scale(-1,1)"/>
+  </g>
+</svg>

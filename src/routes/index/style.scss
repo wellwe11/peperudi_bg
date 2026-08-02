@@ -3,9 +3,8 @@
 .hero {
   &.container {
     height: 100vh;
-    width: 100vw;
 
-    padding: 10rem 5rem;
+    padding: 10rem 0rem;
 
     display: flex;
     justify-content: space-between;
@@ -65,6 +64,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-left: -20px;
 
             &::after {
               content: "";
