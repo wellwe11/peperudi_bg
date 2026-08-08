@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { useLenis } from "@/routes/__root";
 import useCurrentTime from "@/hooks/useCurrentTime";
 
 import butterfly from "@/resources/images/insects/butterfly.svg";
@@ -40,37 +39,31 @@ const SVG_SAMPLES = [
   { name: "mantis", src: mantis },
 ];
 
-const MAX_PUSH = 70; // horizontal swing at peak proximity
-const ARC_HEIGHT = 22; // vertical pull toward icon at peak proximity
-const INFLUENCE_RANGE = 140; // how far the effect reaches from the icon
-const SMOOTHING = 0.12; // 0–1: lower = smoother/laggier, higher = snappier
+const MAX_PUSH = 70;
+const ARC_HEIGHT = 22;
+const INFLUENCE_RANGE = 140;
+const SMOOTHING = 0.12;
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer_inner">
         <Scroller />
+        <Footer_info />
       </div>
     </footer>
   );
 }
 
-function Scroller() {
-  const lenis = useLenis();
+const Scroller = () => {
   const [activeInsect, setActiveInsect] = useState(0);
   const sofiaTime = useCurrentTime("Europe/Sofia");
 
   const imageWrapperRef = useRef<HTMLDivElement>(null);
-  const rowsContainerRef = useRef<HTMLDivElement>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const leftRefs = useRef<(HTMLParagraphElement | null)[]>([]);
   const rightRefs = useRef<(HTMLParagraphElement | null)[]>([]);
 
-  const containerTopRef = useRef(0);
-  const copyHeightRef = useRef(0);
-  const lastScrollYRef = useRef(0);
-
-  // per-row damped proximity — this is what makes motion ease instead of snap
   const smoothedRef = useRef<number[]>([]);
 
   const baseRows = SAMPLE_TEXTS.map((row) =>
@@ -82,6 +75,7 @@ function Scroller() {
     smoothedRef.current = baseRows.map(() => 0);
   }, [N]);
 
+  // icon swap as each row crosses the vertical center
   useEffect(() => {
     const triggers = rowRefs.current.map((el, i) => {
       if (!el) return null;
@@ -96,20 +90,7 @@ function Scroller() {
     return () => triggers.forEach((t) => t?.kill());
   }, [N]);
 
-  useEffect(() => {
-    function measure() {
-      const container = rowsContainerRef.current;
-      if (!container) return;
-      const rect = container.getBoundingClientRect();
-      containerTopRef.current = rect.top + window.scrollY;
-      copyHeightRef.current = container.scrollHeight / 2;
-    }
-    measure();
-    window.addEventListener("resize", measure);
-    lastScrollYRef.current = window.scrollY;
-    return () => window.removeEventListener("resize", measure);
-  }, []);
-
+  // proximity push effect — unchanged, this part was working fine
   useEffect(() => {
     function updatePush() {
       const imageEl = imageWrapperRef.current;
@@ -127,8 +108,7 @@ function Scroller() {
           Math.min(INFLUENCE_RANGE, distance),
         );
 
-        // smoothstep instead of linear falloff — no hard corner at the boundary
-        const signed = clamped / INFLUENCE_RANGE; // continuous -1..1, passes smoothly through 0
+        const signed = clamped / INFLUENCE_RANGE;
         const target = 1 - Math.abs(signed);
         const smoothTarget = target * target * (3 - 2 * target);
 
@@ -137,7 +117,7 @@ function Scroller() {
         smoothedRef.current[i] = eased;
 
         const pushX = eased * MAX_PUSH;
-        const pushY = -signed * ARC_HEIGHT * eased; // sign now varies continuously, no snap
+        const pushY = -signed * ARC_HEIGHT * eased;
 
         const left = leftRefs.current[i];
         const right = rightRefs.current[i];
@@ -148,35 +128,6 @@ function Scroller() {
     gsap.ticker.add(updatePush);
     return () => gsap.ticker.remove(updatePush);
   }, []);
-
-  useEffect(() => {
-    function handleLoop() {
-      if (!lenis) return;
-      if (copyHeightRef.current === 0) return;
-
-      const currentScrollY = window.scrollY;
-      const direction = currentScrollY > lastScrollYRef.current ? "down" : "up";
-      lastScrollYRef.current = currentScrollY;
-
-      if (direction !== "down") return;
-
-      let relative = currentScrollY - containerTopRef.current;
-      let newScrollY = currentScrollY;
-
-      while (relative >= copyHeightRef.current) {
-        newScrollY -= copyHeightRef.current;
-        relative -= copyHeightRef.current;
-      }
-
-      if (newScrollY !== currentScrollY) {
-        lenis.scrollTo(newScrollY, { immediate: true });
-        lastScrollYRef.current = newScrollY;
-      }
-    }
-
-    gsap.ticker.add(handleLoop);
-    return () => gsap.ticker.remove(handleLoop);
-  }, [lenis]);
 
   const insect = SVG_SAMPLES[activeInsect];
 
@@ -195,7 +146,7 @@ function Scroller() {
         </div>
       </section>
 
-      <section className="contact-info" ref={rowsContainerRef}>
+      <section className="contact-info">
         {baseRows.map(({ left, right }, i) => (
           <div
             key={i}
@@ -225,6 +176,14 @@ function Scroller() {
       </section>
     </div>
   );
-}
+};
+
+const Footer_info = () => {
+  return (
+    <div className="footer_info">
+      <h1>hi this is footer info</h1>
+    </div>
+  );
+};
 
 export default Footer;

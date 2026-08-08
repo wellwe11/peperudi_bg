@@ -14,7 +14,6 @@ function RouteComponent() {
       <div
         style={{
           height: "500px",
-          backgroundColor: "green",
         }}
       />
     </div>
